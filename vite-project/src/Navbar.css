@@ -1,0 +1,33 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding : 10px;
+    align-items: center;
+    list-style: none;
+    
+    
+    
+}
+.box1{color: green;
+     text-decoration: none; }
+.box2{color:red;
+    text-decoration: none;}
+.box3{color: yellow; 
+    text-decoration: none;}
+.box4{color: blue;
+     text-decoration: none; }
+.box5{color: orange;
+     text-decoration: none; }
+
+
+.buyButton{
+    background-color: red;
+    color:black;
+    border: 5px solid pink;
+}
+.buyButton:hover{
+      background-color: blue;
+      color:white;
+      cursor: pointer;
+}
