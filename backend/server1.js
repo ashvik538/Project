@@ -9,8 +9,8 @@ app.get('/',(req,res)=>{
   res.json({
     status:"Contact API is running",
     endpoints:{
-      POST:'/api/contact'
-      GET:'/api/messages'
+      'POST':'/api/contact',
+      'GET':'/api/messages'
     }
   })
 })
