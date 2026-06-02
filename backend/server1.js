@@ -3,7 +3,10 @@ require("dotenv").config()
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'king-two-ivory.vercel.app', // replace with your real Vercel URL
+  methods: ['GET', 'POST']
+}));
 app.use(express.json());
 app.get('/',(req,res)=>{
   res.json({
