@@ -4,8 +4,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 app.use(cors({
-  origin: 'king-two-ivory.vercel.app', // replace with your real Vercel URL
-  methods: ['GET', 'POST']
+  origin: [
+    'https://king-two-ivory.vercel.app',
+    'https://king-fwr9iktwi-ashvik538s-projects.vercel.app'
+  ],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
 }));
 app.use(express.json());
 app.get('/',(req,res)=>{
