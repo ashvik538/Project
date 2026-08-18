@@ -1,0 +1,221 @@
+/* ── Global Reset & Base ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Hero Section ─────────────────────────────────────────── */
+.hero {
+  min-height: calc(100vh - 58px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 40px;
+  background: radial-gradient(ellipse at 20% 40%, rgba(59,130,246,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 80%, rgba(139,92,246,0.08) 0%, transparent 60%),
+              #0a0a0a;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 20px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff 30%, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: #94a3b8;
+  line-height: 1.7;
+  margin: 0 0 12px;
+  max-width: 600px;
+}
+
+/* ── About Section ────────────────────────────────────────── */
+.about {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.about h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin: 0 0 28px;
+  color: #fff;
+}
+
+.about p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: #94a3b8;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.about p strong {
+  color: #e2e8f0;
+}
+
+/* ── Skills Section ───────────────────────────────────────── */
+.skills {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.skills h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin: 0 0 36px;
+  color: #fff;
+}
+
+.skill-group {
+  margin-bottom: 32px;
+  background: rgba(18,24,38,0.7);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 24px 28px;
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 16px;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-list li {
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.25);
+  color: #bfdbfe;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Projects (ContactForm) ───────────────────────────────── */
+.projects-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.projects-page h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  margin: 0 0 32px;
+  color: #fff;
+}
+
+.projects-page img {
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* ── Footer / Social Icons ────────────────────────────────── */
+footer {
+  background: #070a10;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 32px 24px 24px;
+  text-align: center;
+}
+
+footer center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 6px;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+footer a:hover {
+  transform: translateY(-3px);
+  opacity: 0.8;
+}
+
+footer p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.footer-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ── Mobile Responsive ────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hero {
+    padding: 36px 20px;
+  }
+
+  .about {
+    padding: 40px 20px;
+  }
+
+  .skills {
+    padding: 40px 20px;
+  }
+
+  .skill-group {
+    padding: 18px 16px;
+  }
+
+  .projects-page {
+    padding: 32px 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}

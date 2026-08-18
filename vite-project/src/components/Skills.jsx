@@ -3,12 +3,12 @@ import React from "react"
 function Skills(){
     return(
         <>
-        <section class="skills">
+        <section className="skills">
   <h2>Tech Stack</h2>
   
-  <div class="skill-group">
+  <div className="skill-group">
     <h3>Frontend</h3>
-    <ul class="skill-list">
+    <ul className="skill-list">
       <li>React.js</li>
       <li>JavaScript (ES6+)</li>
       <li>Tailwind CSS</li>
@@ -17,9 +17,9 @@ function Skills(){
     </ul>
   </div>
 
-  <div class="skill-group">
+  <div className="skill-group">
     <h3>Backend</h3>
-    <ul class="skill-list">
+    <ul className="skill-list">
       <li>Node.js</li>
       <li>Express.js</li>
       <li>REST APIs</li>
@@ -28,10 +28,10 @@ function Skills(){
     </ul>
   </div>
 
-  <div class="skill-group">
-    <h3>Tools & Deploy</h3>
-    <ul class="skill-list">
-      <li>Git & GitHub</li>
+  <div className="skill-group">
+    <h3>Tools &amp; Deploy</h3>
+    <ul className="skill-list">
+      <li>Git &amp; GitHub</li>
       <li>Vercel / Render</li>
       <li>Postman</li>
       <li>VS Code</li>

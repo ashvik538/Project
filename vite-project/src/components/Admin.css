@@ -657,3 +657,220 @@
   margin-bottom: 12px;
   opacity: 0.5;
 }
+
+/* ── Mobile Responsive Media Queries ─────────────────────── */
+
+@media (max-width: 768px) {
+  .admin-page-container {
+    padding: 20px 16px;
+  }
+
+  /* Stack header vertically */
+  .admin-dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .admin-dash-title {
+    font-size: 22px;
+  }
+
+  .admin-dash-user-bar {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Stats grid: 2 cols on tablet */
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  /* Toolbar: stack vertically */
+  .admin-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .admin-search-box {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .admin-filter-tabs {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .admin-filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .admin-action-group {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .admin-action-group .admin-secondary-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Bulk bar: stack */
+  .admin-bulk-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .admin-bulk-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .admin-bulk-actions .admin-secondary-btn {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  /* Convert table to card-based layout on mobile */
+  .admin-table-container {
+    border-radius: 12px;
+  }
+
+  .admin-table thead {
+    display: none; /* hide header row */
+  }
+
+  .admin-table,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 14px 16px;
+    position: relative;
+  }
+
+  .admin-table td {
+    padding: 4px 0;
+    border-bottom: none;
+    font-size: 13px;
+  }
+
+  /* Checkbox: absolute top-right */
+  .admin-table td:nth-child(1) {
+    position: absolute;
+    top: 14px;
+    right: 48px;
+    width: auto;
+    padding: 0;
+  }
+
+  /* Star button: absolute top-right */
+  .admin-table td:nth-child(2) {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: auto;
+    padding: 0;
+  }
+
+  /* Sender info */
+  .admin-table td:nth-child(3) {
+    padding-right: 70px; /* make room for checkbox+star */
+  }
+
+  /* Subject */
+  .admin-subject-snippet {
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    color: #94a3b8;
+    font-size: 12px;
+  }
+
+  /* Actions cell: align left */
+  .admin-table td:last-child {
+    text-align: left !important;
+    padding-top: 8px;
+  }
+
+  /* Modal: full-screen on mobile */
+  .admin-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .admin-modal-card {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 20px 20px 0 0;
+    padding: 24px 18px;
+  }
+
+  .admin-modal-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .admin-modal-actions a,
+  .admin-modal-actions > div {
+    width: 100%;
+  }
+
+  .admin-modal-actions > div {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .admin-modal-actions > div .admin-secondary-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Stats: single column on very small screens */
+  .admin-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-stat-card {
+    padding: 16px;
+  }
+
+  .admin-stat-info h3 {
+    font-size: 22px;
+  }
+
+  .admin-stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .admin-login-box {
+    padding: 28px 20px;
+  }
+
+  .admin-login-title {
+    font-size: 22px;
+  }
+}

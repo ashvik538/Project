@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Icon from './Icon'
 import Home from './components/Home'
 import About from './components/About'
@@ -7,22 +8,68 @@ import Skills from './components/Skills'
 import AdminLogin from './components/AdminLogin'
 import AdminDashboard from './components/AdminDashboard'
 import ProtectedRoute from './components/ProtectedRoute'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 
 import './Navbar.css'
+
+function NavBar() {
+  const [open, setOpen] = useState(false)
+  const location = useLocation()
+
+  // Close mobile menu on route change
+  useEffect(() => { setOpen(false) }, [location])
+
+  const links = [
+    { to: '/',       label: 'Home',    cls: 'box1' },
+    { to: '/about',  label: 'About',   cls: 'box2' },
+    { to: '/projects', label: 'Projects', cls: 'box4' },
+    { to: '/skills', label: 'Skills',  cls: 'box5' },
+    { to: '/contact', label: 'Contact', cls: 'box3' },
+    { to: '/admin',  label: 'Admin 🔒', cls: 'box6' },
+  ]
+
+  return (
+    <>
+      <ul className='navbar'>
+        <li className='nav-brand'>Ashvik</li>
+
+        {/* Desktop links */}
+        <ul className='nav-links'>
+          {links.map(l => (
+            <li key={l.to}>
+              <Link to={l.to} className={l.cls}>{l.label}</Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Hamburger button */}
+        <button
+          className={`nav-hamburger ${open ? 'open' : ''}`}
+          onClick={() => setOpen(o => !o)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </ul>
+
+      {/* Mobile dropdown */}
+      <nav className={`nav-mobile-menu ${open ? 'open' : ''}`}>
+        {links.map(l => (
+          <Link key={l.to} to={l.to} className={l.cls}>{l.label}</Link>
+        ))}
+      </nav>
+    </>
+  )
+}
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <ul className='navbar'>
-          <li><Link to="/" className='box1'>Home</Link></li>
-          <li><Link to="/about" className='box2'>About</Link></li>
-          <li><Link to="/projects" className='box4'>Projects</Link></li>
-          <li><Link to="/skills" className='box5'>Skills</Link></li>
-          <li><Link to="/contact" className='box3'>Contact</Link></li>
-          <li><Link to="/admin" className='box6'>Admin 🔒</Link></li>
-        </ul>
+        <NavBar />
 
         <Routes>
           <Route path='/' element={<Home />} />
