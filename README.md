@@ -3,6 +3,8 @@
 A full-stack web application built with the **MERN stack** (MongoDB, Express, React, Node.js). It includes a public-facing portfolio website with a contact form, and a **JWT-secured admin dashboard** to manage all incoming messages.
 
 > 🔗 **Live Demo:** [king-two-ivory.vercel.app](https://king-two-ivory.vercel.app)
+> 
+> 🖥️ **Backend API:** Hosted on [Render](https://render.com) | 🗄️ **Database:** MongoDB Atlas
 
 ---
 
@@ -54,6 +56,8 @@ A full-stack web application built with the **MERN stack** (MongoDB, Express, Re
 | Service | Usage |
 |---|---|
 | Vercel | Frontend hosting |
+| Render | Backend (Node.js) hosting |
+| MongoDB Atlas | Cloud database |
 
 ---
 
